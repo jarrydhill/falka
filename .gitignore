@@ -1,0 +1,51 @@
+# ============================================================
+# Gitignore for the FALKA repo
+# This working directory hosts other unrelated projects too
+# (AI Notetaker, Seatech concept, etc.) — only FALKA files are
+# intended to be tracked here. Everything else is explicitly
+# excluded below.
+# ============================================================
+
+# --- Unrelated projects living in this folder ---
+/main.py
+/requirements.txt
+/README.md
+/.env
+/config/
+/data/
+/src/
+/tests/
+/memory/
+/daily-email-briefing.html
+/falka-website.html
+/hill-kids-game.html
+/seatech-concept/
+
+# --- Build / deploy artefacts ---
+falka-deploy.zip
+
+# --- Claude / local tooling ---
+/.claude/
+
+# --- Node / npm (for Sanity Studio later) ---
+node_modules/
+.npm/
+.pnp.*
+dist/
+.vite/
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.swp
+.vscode/
+.idea/
+
+# --- Secrets ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem

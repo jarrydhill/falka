@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://falka.com.au/sitemap.xml
