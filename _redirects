@@ -1,17 +1,18 @@
 # Cloudflare Pages URL rewrites / redirects
 #
-# Cloudflare automatically strips `.html` and canonicalises trailing slashes
-# BEFORE applying these rules. Rules are evaluated in order; first match wins.
-# Files that exist are served directly (rules never consulted).
+# Rules are evaluated in order; first match wins.
+# Static files are checked first — these rules only apply when no
+# file matches.
 
 # --- Legacy 301s for slugs that were renamed in Sanity ---
 /falka-01        /vika-8           301
 /falka-03        /vika-81          301
 
-# --- Current boat slugs → /boat.html template (rewrite, URL preserved) ---
-# Add one line per live boat. When Jarryd adds a new boat to Sanity,
-# append its slug here. This avoids a catchall that would swallow
-# /login and other non-boat paths.
-/vika-8          /boat.html        200
-/falka-02        /boat.html        200
-/vika-81         /boat.html        200
+# --- Current boat slugs → /boat template (rewrite, URL preserved) ---
+# The target is `/boat` (no .html) so Cloudflare's automatic HTML
+# canonicalisation doesn't kick in and redirect to /boat.
+# Add one line per live boat. When a new boat is added in Sanity,
+# append its slug here.
+/vika-8          /boat             200
+/falka-02        /boat             200
+/vika-81         /boat             200
