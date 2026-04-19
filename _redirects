@@ -1,0 +1,19 @@
+# Cloudflare Pages URL rewrites / redirects
+#
+# SEO-preserving redirects for URLs that existed under the old FALKA 01/02
+# naming but have since been renamed in Sanity. When a slug changes in the
+# CMS, add its old path here with a 301 to the new slug.
+
+/falka-01        /vika-8           301
+/falka-01.html   /vika-8           301
+/falka-02.html   /falka-02         301
+/falka-03        /vika-81          301
+/falka-03.html   /vika-81          301
+
+# Catch-all: any unrecognised single-segment path serves boat.html.
+# boat.html reads the slug from the URL and queries Sanity. Unknown
+# slugs render a "Boat not found" message.
+# Static files (favicon.ico, falka.css, /falka-images/*, etc.) are
+# checked first — these rules only apply when no file matches.
+
+/:slug           /boat.html        200
