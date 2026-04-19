@@ -10,6 +10,12 @@
 /falka-03        /vika-81          301
 /falka-03.html   /vika-81          301
 
+# Known pages — must be listed BEFORE the catchall below so they
+# don't get swallowed into /boat.html. Cloudflare auto-strips .html
+# so /login.html requests arrive as /login here.
+/login           /login.html       200
+/boat            /boat.html        200
+
 # Catch-all: any unrecognised single-segment path serves boat.html.
 # boat.html reads the slug from the URL and queries Sanity. Unknown
 # slugs render a "Boat not found" message.
