@@ -27,12 +27,16 @@ falka-deploy.zip
 # --- Claude / local tooling ---
 /.claude/
 
-# --- Node / npm (for Sanity Studio later) ---
+# --- Node / npm (Sanity Studio) ---
 node_modules/
 .npm/
 .pnp.*
 dist/
 .vite/
+
+# --- Sanity Studio build artifacts ---
+studio/.sanity/
+studio/dist/
 
 # --- OS / editor cruft ---
 .DS_Store

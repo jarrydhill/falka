@@ -25,7 +25,7 @@
             <li><a href="index.html#range">The Range</a></li>
             <li><a href="falka-01.html">FALKA 01</a></li>
             <li><a href="falka-02.html">FALKA 02</a></li>
-            <li><a href="index.html#configurator">Configure</a></li>
+            <li><a href="#configurator">Configure</a></li>
             <li><a href="index.html#craft">Craft</a></li>
             <li><a href="index.html#enquire" class="nav-cta">Contact</a></li>
         </ul>
@@ -154,13 +154,28 @@
         </div>
     </section>
 
+    <!-- CONFIGURATOR (boat-scoped, rendered from Sanity by falka-cms.js) -->
+    <section class="section configurator" id="configurator">
+        <div class="container">
+            <div class="config-header">
+                <p class="eyebrow reveal">Configure</p>
+                <h2 class="display reveal">BUILD <span class="accent">YOURS.</span></h2>
+                <p class="lead reveal reveal-d2" style="margin: 1.5rem auto 0;">Walk the key decisions. No prices here &mdash; we&rsquo;ll come back with a real quote once we know the build.</p>
+            </div>
+            <div class="config-steps">
+                <ul class="config-nav" id="configNav"></ul>
+                <div class="config-panel"><p style="color: var(--text-light); text-align: center; padding: 4rem 0;">Loading configurator&hellip;</p></div>
+            </div>
+        </div>
+    </section>
+
     <!-- CTA -->
     <section class="section model-cta">
         <div class="container model-cta-inner">
             <p class="eyebrow reveal">Next</p>
             <h2 class="display reveal">BUILD ONE, <span class="accent">OR JUST TALK.</span></h2>
             <div class="model-cta-actions reveal reveal-d2">
-                <a href="index.html#configurator" class="btn btn-dark">Configure <span class="arrow"></span></a>
+                <a href="#configurator" class="btn btn-dark">Configure <span class="arrow"></span></a>
                 <a href="index.html#enquire" class="btn btn-ghost">Get in Touch</a>
                 <a href="falka-01.html" class="btn btn-ghost">See FALKA 01</a>
             </div>
@@ -181,6 +196,7 @@
         </div>
     </footer>
 
+    <script src="falka-cms.js"></script>
     <script src="falka.js"></script>
 </body>
 </html>
