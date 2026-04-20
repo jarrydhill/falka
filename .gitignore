@@ -25,7 +25,10 @@
 falka-deploy.zip
 
 # --- Claude / local tooling ---
-/.claude/
+# Exclude the whole .claude/ folder except agents/ (shared subagents
+# that are part of the repo).
+/.claude/*
+!/.claude/agents/
 
 # --- Node / npm (Sanity Studio) ---
 node_modules/
