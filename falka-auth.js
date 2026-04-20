@@ -18,7 +18,7 @@
       // Preserve the destination so login can redirect back here
       var dest = path + location.search + location.hash
       sessionStorage.setItem('falka-auth-dest', dest)
-      location.replace('/login.html')
+      location.replace('/login')
     }
   } catch (err) {
     // If localStorage is unavailable for some reason, don't block

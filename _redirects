@@ -9,8 +9,11 @@
 /falka-03        /vika-81          301
 
 # --- Known non-boat pages. Must come BEFORE the catchall so they
-# don't get swallowed and served as the boat template. ---
-/login           /login.html       200
+# don't get swallowed and served as the boat template. They're
+# extension-less files (+ _headers sets Content-Type) to avoid
+# Cloudflare's HTML canonicalisation triggering a redirect loop. ---
+/login.html      /login            301
+/boat.html       /boat             301
 
 # --- Catch-all: any other single-segment path serves the boat
 # template. Slug is extracted from the URL by falka-cms.js to
