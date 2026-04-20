@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="falka-auth.js"></script>
     <title>FALKA — Australian Power Catamarans</title>
-    <meta name="description" content="FALKA builds considered power catamarans for Australian waters. Three models, one standard. FALKA 01 and FALKA 02 available now.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="falka.css">
+    <meta name="description" content="FALKA builds considered power catamarans for Australian waters. A range of three models for owner-operators who want to spend the whole day on the water.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&family=Archivo:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="falka-v2.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
     <meta property="og:title" content="FALKA — Australian Power Catamarans">
-    <meta property="og:description" content="An all-day boat, not just a day boat. Australian designed, owner-operated power catamarans.">
-    <meta property="og:image" content="https://falka.com.au/falka-images/hero-navy-hull.jpeg">
+    <meta property="og:description" content="Considered power catamarans built for Australian waters, designed for owner-operators.">
+    <meta property="og:image" content="https://falka.com.au/falka-images/falka02-hero.jpeg">
     <meta property="og:url" content="https://falka.com.au/">
     <meta property="og:type" content="website">
 </head>
@@ -20,275 +24,389 @@
 
     <!-- NAV -->
     <nav class="nav" id="nav">
-        <a href="index.html"><img src="falka-images/logo.png" alt="FALKA Marine" class="nav-logo"></a>
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#philosophy">Philosophy</a></li>
+        <div class="nav-left">
+            <a href="#range" class="nav-link">The Range</a>
+            <a href="#craft" class="nav-link">Craft</a>
+            <a href="#service" class="nav-link">Service</a>
+            <a href="#journal" class="nav-link">Journal</a>
+        </div>
+        <a href="#top" class="nav-brand">
+            <img src="falka-images/logo.png" alt="FALKA">
+        </a>
+        <div class="nav-right">
+            <a href="tel:+61000000000" class="nav-link">+61 &middot; Australia</a>
+            <a href="#enquire" class="nav-cta">Enquire</a>
+            <button class="nav-menu-btn" id="navOpen" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE NAV -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-head">
+            <img src="falka-images/logo.png" alt="FALKA">
+            <button class="mobile-nav-close" id="navClose" aria-label="Close menu">&times;</button>
+        </div>
+        <ul>
             <li><a href="#range">The Range</a></li>
             <li><a href="#craft">Craft</a></li>
-            <li><a href="#enquire" class="nav-cta">Contact</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#journal">Journal</a></li>
+            <li><a href="#enquire">Enquire</a></li>
         </ul>
-        <div class="nav-toggle" id="navToggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
-    </nav>
+        <div class="mobile-nav-foot">
+            Falka Yachtworks &middot; Australia<br>
+            hello@falka.com.au
+        </div>
+    </div>
 
     <!-- HERO -->
     <section class="hero" id="top">
         <div class="hero-media">
-            <img src="falka-images/hero-navy-hull.jpeg" alt="FALKA 01 power catamaran">
+            <img src="falka-images/falka02-hero.jpeg" alt="FALKA 1050">
         </div>
-        <div class="hero-content">
-            <p class="hero-eyebrow">Australian designed &middot; Owner-operated</p>
-            <h1 class="hero-title">AN ALL-DAY BOAT. <span class="accent">NOT JUST A DAY BOAT.</span></h1>
-            <p class="hero-subtitle">Power catamarans built for families and friends on the water, sun up to sun down. Two in the water &mdash; FALKA 01 at eight metres, FALKA 02 at 9.58.</p>
+        <div class="hero-inner">
+            <p class="hero-anniversary">A new standard in Australian power catamarans</p>
+            <h1 class="hero-headline">Considered craft, <em>built for the day</em>.</h1>
+            <p class="hero-sub">Owner-operated power catamarans designed and commissioned in Australia. Three models. One standard. FALKA 845 in the water now; 627 and 1050 incoming.</p>
             <div class="hero-actions">
-                <a href="#range" class="btn btn-primary">See the Range <span class="arrow"></span></a>
-                <a href="#enquire" class="btn btn-outline">Get in Touch</a>
+                <a href="#range" class="btn btn-primary">Explore the Range <span class="arrow"></span></a>
+                <a href="#enquire" class="btn btn-outline">Register Interest</a>
             </div>
         </div>
-        <div class="hero-scroll"><span>Scroll</span></div>
+        <div class="hero-scroll-hint">Scroll</div>
     </section>
 
-    <!-- PHILOSOPHY -->
-    <section class="section philosophy" id="philosophy">
-        <div class="container philosophy-inner">
-            <p class="eyebrow reveal">Why We Built It</p>
-            <h2 class="display reveal">WE BUILT IT BECAUSE <span class="accent">IT DIDN&rsquo;T EXIST.</span></h2>
-            <p class="reveal reveal-d2">I went looking for a cat that could do a full day on the water with family and friends &mdash; sun up to sun down &mdash; without tapping out at lunchtime. Everything in the right size was a day boat dressed up. Everything with the right amenity was fifteen metres of boat and a marina berth I didn&rsquo;t want.</p>
-            <p class="reveal reveal-d3">So we built the one in the middle. Big-boat amenity in a trailerable, owner-operated platform. Proper galley. Real shade. Shelter when the weather turns. Room to spread out without being on top of each other.</p>
-            <div class="philosophy-stats">
-                <div class="stat reveal reveal-d2">
-                    <div class="stat-value">3</div>
-                    <div class="stat-label">Models in the Range</div>
-                </div>
-                <div class="stat reveal reveal-d3">
-                    <div class="stat-value">100%</div>
-                    <div class="stat-label">Australian Designed</div>
-                </div>
-                <div class="stat reveal reveal-d4">
-                    <div class="stat-value">13kn</div>
-                    <div class="stat-label">Designed Cruise Speed</div>
-                </div>
+    <!-- INTRO STRIP -->
+    <section class="intro-strip">
+        <div class="container intro-grid">
+            <div>
+                <p class="eyebrow reveal">Falka Yachtworks</p>
+                <h2 class="reveal reveal-d2">A catamaran for the <em>whole day</em>, not just the morning.</h2>
+            </div>
+            <div>
+                <p class="reveal reveal-d2">We went looking for a catamaran that could take family and friends from sun-up to sun-down &mdash; without tapping out at lunchtime. Everything in the right size was a day boat dressed up. Everything with the right amenity was fifteen metres and a marina berth we didn't want.</p>
+                <p class="reveal reveal-d3">So we built the one in the middle. Big-boat amenity on an owner-operated platform. A proper galley. Real shade. Shelter when the weather turns. Room to spread out without being on top of each other.</p>
             </div>
         </div>
     </section>
 
-    <!-- TECHNICAL PILLARS -->
-    <section class="section pillars" id="pillars">
+    <!-- MODEL RANGE -->
+    <section class="range" id="range">
         <div class="container">
-            <div class="pillars-intro">
-                <p class="eyebrow reveal">What Backs It</p>
-                <h2 class="display reveal">BUILT TO THE <span class="accent">NUMBERS.</span></h2>
-            </div>
-            <div class="pillars-grid">
-
-                <div class="pillar-card reveal reveal-d2">
-                    <div class="pillar-icon">
-                        <svg viewBox="0 0 48 48" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="20"/><path d="M15 24 L22 31 L34 17"/></svg>
-                    </div>
-                    <h4>CE Category B</h4>
-                    <p>Offshore-certified across the range. Built for open water, not just inshore days.</p>
+            <header class="range-header">
+                <div>
+                    <p class="eyebrow reveal">The Range</p>
+                    <h2 class="reveal reveal-d2">Three models. <em>One standard.</em></h2>
                 </div>
+                <p class="reveal reveal-d3">Every FALKA is built to CE Category B offshore certification, backed by a 5-year structural and osmosis warranty, and commissioned in Australia.</p>
+            </header>
 
-                <div class="pillar-card reveal reveal-d3">
-                    <div class="pillar-icon">
-                        <svg viewBox="0 0 48 48" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6 L40 12 V26 C40 34 33 41 24 44 C15 41 8 34 8 26 V12 Z"/><path d="M17 24 L22 29 L31 19"/></svg>
+            <div class="models-grid">
+                <a href="falka-627.html" class="model-card reveal reveal-d2">
+                    <div class="model-media">
+                        <img src="falka-images/coming-soon-bg.jpeg" alt="FALKA 627">
+                        <div class="model-status coming">In Development</div>
                     </div>
-                    <h4>5-Year Warranty</h4>
-                    <p>Structural and osmosis. Written into the spec, commissioned in Australia, honoured here.</p>
-                </div>
-
-                <div class="pillar-card reveal reveal-d4">
-                    <div class="pillar-icon">
-                        <svg viewBox="0 0 48 48" stroke-linecap="round" stroke-linejoin="round"><path d="M4 32 Q12 26 24 30 Q36 34 44 28"/><path d="M6 22 L24 10 L42 22"/><path d="M12 22 L12 32"/><path d="M36 22 L36 32"/></svg>
-                    </div>
-                    <h4>Nazarov Hull</h4>
-                    <p>FALKA 02 runs on the proven Samui 9.50 hull by Albert Nazarov, built by Andaman Boatyard.</p>
-                </div>
-
-                <div class="pillar-card reveal reveal-d4">
-                    <div class="pillar-icon">
-                        <svg viewBox="0 0 48 48" stroke-linecap="round" stroke-linejoin="round"><path d="M8 24 H40"/><path d="M32 16 L40 24 L32 32"/><circle cx="12" cy="24" r="3"/></svg>
-                    </div>
-                    <h4>13-Knot Displacement</h4>
-                    <p>Tuned for economy, range, and reserve in weather. Not raw speed.</p>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- RANGE -->
-    <section class="section range" id="range">
-        <div class="container">
-            <div class="range-intro">
-                <p class="eyebrow reveal">The Line-Up</p>
-                <h2 class="display reveal">TWO IN THE WATER. <span class="accent">ONE COMING.</span></h2>
-                <p class="lead reveal reveal-d2" style="margin: 1.5rem auto 0;">A deliberately small line-up. Same all-day brief, different scales &mdash; so you pick the boat, not the compromise.</p>
-            </div>
-            <div class="range-grid">
-
-                <!-- FALKA 01 -->
-                <a href="falka-01.html" class="range-card available reveal reveal-d2">
-                    <div class="range-card-media">
-                        <img src="falka-images/running-sea-eclipse.jpeg" alt="FALKA 01 running">
-                        <span class="range-card-status">Available</span>
-                    </div>
-                    <div class="range-card-body">
-                        <p class="range-card-number">Model 01</p>
-                        <h3 class="range-card-title">FALKA <span class="accent">01</span></h3>
-                        <p class="range-card-sub">The 8-Metre All-Day Cat</p>
-                        <div class="range-card-specs">
-                            <div class="spec-row"><span class="spec-k">LOA</span><span class="spec-v">8.00 m</span></div>
-                            <div class="spec-row"><span class="spec-k">Beam</span><span class="spec-v">4.50 m</span></div>
-                            <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">8 POB</span></div>
-                            <div class="spec-row"><span class="spec-k">Power</span><span class="spec-v">2 &times; 30&ndash;90 hp</span></div>
+                    <div class="model-body">
+                        <div class="model-code">627</div>
+                        <h3 class="model-name">FALKA 627</h3>
+                        <p class="model-tag">The 6-metre trailerable entry to the FALKA range.</p>
+                        <div class="model-specs">
+                            <div class="model-spec">
+                                <span class="model-spec-label">Length</span>
+                                <span class="model-spec-value">6.0 m</span>
+                            </div>
+                            <div class="model-spec">
+                                <span class="model-spec-label">Beam</span>
+                                <span class="model-spec-value">2.75 m</span>
+                            </div>
+                            <div class="model-spec">
+                                <span class="model-spec-label">Power</span>
+                                <span class="model-spec-value">F30&ndash;F90</span>
+                            </div>
                         </div>
-                        <span class="range-card-link">Explore FALKA 01 <span class="arrow"></span></span>
+                        <span class="model-explore">Explore FALKA 627 <span class="arrow"></span></span>
                     </div>
                 </a>
 
-                <!-- FALKA 02 -->
-                <a href="falka-02.html" class="range-card available reveal reveal-d3">
-                    <div class="range-card-media">
-                        <img src="falka-images/falka02-running.jpeg" alt="FALKA 02 running">
-                        <span class="range-card-status">Available</span>
+                <a href="falka-845.html" class="model-card reveal reveal-d3">
+                    <div class="model-media">
+                        <img src="falka-images/running-serenity.jpeg" alt="FALKA 845">
+                        <div class="model-status">In the Water</div>
                     </div>
-                    <div class="range-card-body">
-                        <p class="range-card-number">Model 02</p>
-                        <h3 class="range-card-title">FALKA <span class="accent">02</span></h3>
-                        <p class="range-card-sub">The 9.58-Metre All-Day Cat &middot; Samui 9.50 Hull</p>
-                        <div class="range-card-specs">
-                            <div class="spec-row"><span class="spec-k">LOA</span><span class="spec-v">9.58 m</span></div>
-                            <div class="spec-row"><span class="spec-k">Beam</span><span class="spec-v">5.22 m</span></div>
-                            <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">12 POB</span></div>
-                            <div class="spec-row"><span class="spec-k">Power</span><span class="spec-v">2 &times; 115&ndash;200 hp</span></div>
+                    <div class="model-body">
+                        <div class="model-code">845</div>
+                        <h3 class="model-name">FALKA 845</h3>
+                        <p class="model-tag">The original 8-metre day-to-night catamaran.</p>
+                        <div class="model-specs">
+                            <div class="model-spec">
+                                <span class="model-spec-label">Length</span>
+                                <span class="model-spec-value">8.0 m</span>
+                            </div>
+                            <div class="model-spec">
+                                <span class="model-spec-label">Beam</span>
+                                <span class="model-spec-value">4.50 m</span>
+                            </div>
+                            <div class="model-spec">
+                                <span class="model-spec-label">Power</span>
+                                <span class="model-spec-value">F30&ndash;F90</span>
+                            </div>
                         </div>
-                        <span class="range-card-link">Explore FALKA 02 <span class="arrow"></span></span>
+                        <span class="model-explore">Explore FALKA 845 <span class="arrow"></span></span>
                     </div>
                 </a>
 
-                <!-- FALKA 03 - Coming -->
-                <div class="range-card coming reveal reveal-d4">
-                    <div class="range-card-media">
-                        <img src="falka-images/coming-soon-bg.jpeg" alt="FALKA 03 — coming soon" class="coming-bg">
-                        <span class="coming-overlay">03</span>
-                        <span class="range-card-status">In Development</span>
+                <a href="falka-1050.html" class="model-card reveal reveal-d4">
+                    <div class="model-media">
+                        <img src="falka-images/falka02-profile.jpeg" alt="FALKA 1050">
+                        <div class="model-status">New</div>
                     </div>
-                    <div class="range-card-body">
-                        <p class="range-card-number">Model 03</p>
-                        <h3 class="range-card-title">FALKA <span class="accent">03</span></h3>
-                        <p class="range-card-sub">Details to follow</p>
-                        <div class="range-card-specs">
-                            <div class="spec-row"><span class="spec-k">LOA</span><span class="spec-v">&mdash;</span></div>
-                            <div class="spec-row"><span class="spec-k">Beam</span><span class="spec-v">&mdash;</span></div>
-                            <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">&mdash;</span></div>
-                            <div class="spec-row"><span class="spec-k">Release</span><span class="spec-v">2026+</span></div>
+                    <div class="model-body">
+                        <div class="model-code">1050</div>
+                        <h3 class="model-name">FALKA 1050</h3>
+                        <p class="model-tag">9.58 metres of amenity on an owner-operated platform.</p>
+                        <div class="model-specs">
+                            <div class="model-spec">
+                                <span class="model-spec-label">Length</span>
+                                <span class="model-spec-value">9.58 m</span>
+                            </div>
+                            <div class="model-spec">
+                                <span class="model-spec-label">Beam</span>
+                                <span class="model-spec-value">5.22 m</span>
+                            </div>
+                            <div class="model-spec">
+                                <span class="model-spec-label">Power</span>
+                                <span class="model-spec-value">F115&ndash;F200</span>
+                            </div>
                         </div>
-                        <span class="range-card-link">Register Interest <span class="arrow"></span></span>
+                        <span class="model-explore">Explore FALKA 1050 <span class="arrow"></span></span>
                     </div>
-                </div>
-
+                </a>
             </div>
         </div>
     </section>
 
+    <!-- TECH / CRAFT FEATURE -->
+    <section class="tech-feature" id="craft">
+        <div class="media">
+            <img src="falka-images/hero-navy-hull.jpeg" alt="FALKA hull detail">
+        </div>
+        <div class="inner">
+            <div class="tech-copy reveal">
+                <span class="eyebrow on-dark">Built to the Numbers</span>
+                <h2>Hull geometry, <em>honestly engineered</em>.</h2>
+                <p>Every FALKA hull is drawn for Australian conditions &mdash; offshore swell, inshore chop, tropical heat. We validate against the numbers, not marketing. Offshore certification, written warranties, and spec sheets that match the boat you take delivery of.</p>
+                <a href="#range" class="btn btn-outline">See the Specification <span class="arrow"></span></a>
 
-    <!-- CRAFTSMANSHIP -->
-    <section class="section craft" id="craft">
+                <div class="tech-pillars">
+                    <div class="tech-pillar reveal reveal-d2">
+                        <h5>CAT B</h5>
+                        <span>CE Offshore<br>Certified</span>
+                    </div>
+                    <div class="tech-pillar reveal reveal-d3">
+                        <h5>5&nbsp;yr</h5>
+                        <span>Structural<br>Warranty</span>
+                    </div>
+                    <div class="tech-pillar reveal reveal-d4">
+                        <h5>13&nbsp;kn</h5>
+                        <span>Designed<br>Cruise Speed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STORY / CRAFTSMANSHIP -->
+    <section class="story" id="story">
+        <div class="container story-grid">
+            <div class="story-media reveal">
+                <img src="falka-images/craft-portrait.jpeg" alt="Falka Yachtworks craftsmanship">
+            </div>
+            <div class="story-copy">
+                <p class="eyebrow reveal">Made in Australia</p>
+                <h2 class="reveal reveal-d2">A quieter <em>way to build</em>.</h2>
+                <p class="reveal reveal-d2">FALKA isn't a high-volume production yard. Hulls are laid up by a yard we've partnered with for years, commissioned here, and handed over by the same small team that spec'd them. The spec sheet matches the boat. The person answering the phone knows your build.</p>
+                <p class="reveal reveal-d3">We make fewer, and we make them properly. It's the only way we're interested in doing it.</p>
+                <div class="story-sign reveal reveal-d3">
+                    <strong>Jarryd Hill</strong>
+                    <span>Director, Falka Yachtworks</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE -->
+    <section class="service" id="service">
         <div class="container">
-            <div class="craft-grid">
-                <div class="craft-image reveal">
-                    <img src="falka-images/craft-portrait.jpeg" alt="FALKA craftsmanship">
-                </div>
+            <div class="service-grid">
                 <div>
-                    <p class="eyebrow reveal">How We Build</p>
-                    <h2 class="display reveal">MADE THE SLOW WAY. <span class="accent">ON PURPOSE.</span></h2>
-                    <p class="lead reveal reveal-d2">No production lines. No shortcuts. Every FALKA is hand-laid by a partner yard we&rsquo;ve worked with, travelled to, and sea-trialled alongside. Our manufacturing spec runs past fifty pages per model &mdash; it reads like a legal document because it is one.</p>
-                    <div class="craft-pillars">
-                        <div class="craft-pillar reveal reveal-d2">
-                            <h4>Designed here</h4>
-                            <p>Naval architecture, systems design, and layout &mdash; drawn in Australia, for Australian conditions.</p>
-                        </div>
-                        <div class="craft-pillar reveal reveal-d3">
-                            <h4>Built by hand</h4>
-                            <p>Hulls laid up in the right yard for each model, to a signed spec. No production line.</p>
-                        </div>
-                        <div class="craft-pillar reveal reveal-d3">
-                            <h4>Lithium-first</h4>
-                            <p>Victron Smart BMS, MultiPlus-II, integrated solar. Built for quiet anchor nights, not noisy weekends.</p>
-                        </div>
-                        <div class="craft-pillar reveal reveal-d4">
-                            <h4>Commissioned here</h4>
-                            <p>Every hull arrives home for commissioning, a handover sea trial, and a five-year structural warranty.</p>
-                        </div>
-                    </div>
+                    <p class="eyebrow on-dark reveal">Ownership</p>
+                    <h2 class="reveal reveal-d2">After the <em>handover</em>.</h2>
+                </div>
+                <p class="reveal reveal-d2">A FALKA is a long relationship, not a transaction. Service, upgrades, resale, and the unglamorous bits in between &mdash; we're the same number you called when you enquired.</p>
+            </div>
+            <div class="service-row">
+                <div class="service-item reveal reveal-d2">
+                    <h4>Commissioning</h4>
+                    <p>Every boat commissioned in Australia before handover. Sea trial, walkthrough, and pre-delivery inspection included.</p>
+                </div>
+                <div class="service-item reveal reveal-d3">
+                    <h4>Servicing</h4>
+                    <p>Scheduled service plans, engine checks, and structural audits &mdash; through our network or your preferred yard.</p>
+                </div>
+                <div class="service-item reveal reveal-d4">
+                    <h4>Upgrades</h4>
+                    <p>Audio, electronics, upholstery, shade. Retrofit what the next season needs without starting again.</p>
+                </div>
+                <div class="service-item reveal reveal-d4">
+                    <h4>Resale</h4>
+                    <p>When it's time for the next boat, we help the current owner sell the last one. Short list of buyers, straight answer.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ENQUIRE -->
-    <section class="section enquire" id="enquire">
-        <div class="container enquire-inner">
-            <p class="eyebrow light reveal">Get in Touch</p>
-            <h2 class="display reveal">YOUR WATER. <span class="accent">YOUR FALKA.</span></h2>
-            <p class="reveal reveal-d2">Thinking about commissioning a FALKA, or just want a look at what&rsquo;s coming? Send us a note. No sales pipeline, no mailing list &mdash; just a conversation.</p>
+    <!-- EVENTS / JOURNAL -->
+    <section class="events" id="journal">
+        <div class="container">
+            <header class="events-head">
+                <div>
+                    <p class="eyebrow reveal">Journal &amp; Events</p>
+                    <h2 class="reveal reveal-d2">On the water, on the record.</h2>
+                </div>
+                <a href="#" class="btn btn-line-ink">All Stories <span class="arrow"></span></a>
+            </header>
 
-            <form class="enquire-form" id="enquireForm" novalidate>
-                <div>
-                    <label for="e_name">Name</label>
-                    <input type="text" id="e_name" name="name" required>
-                </div>
-                <div>
-                    <label for="e_email">Email</label>
-                    <input type="email" id="e_email" name="email" required>
-                </div>
-                <div>
-                    <label for="e_phone">Phone</label>
-                    <input type="tel" id="e_phone" name="phone" required>
-                </div>
-                <div>
-                    <label for="e_state">State</label>
-                    <select id="e_state" name="state" required>
-                        <option value="">Select&hellip;</option>
-                        <option>NSW</option><option>VIC</option><option>QLD</option><option>WA</option>
-                        <option>SA</option><option>TAS</option><option>ACT</option><option>NT</option>
-                    </select>
-                </div>
-                <div class="full">
-                    <label for="e_interest">I&rsquo;m interested in</label>
-                    <select id="e_interest" name="interest">
-                        <option>FALKA 01 &mdash; specification &amp; availability</option>
-                        <option>FALKA 02 &mdash; specification &amp; availability</option>
-                        <option>FALKA 03 &mdash; register for updates</option>
-                        <option>General &mdash; tell me more about FALKA</option>
-                    </select>
-                </div>
-                <div class="full">
-                    <label for="e_message">Your message</label>
-                    <textarea id="e_message" name="message"></textarea>
-                </div>
-                <div class="full submit-row">
-                    <button type="submit">Be Contacted</button>
-                </div>
-                <p class="form-status" id="enquireFormStatus"></p>
+            <div class="events-grid">
+                <article class="event-card reveal reveal-d2">
+                    <div class="event-media"><img src="falka-images/falka02-aerial.jpeg" alt="FALKA 1050 aerial"></div>
+                    <div class="event-body">
+                        <p class="event-date">April 2026 &middot; Launch</p>
+                        <h3 class="event-title">FALKA 1050 splashes at Sanctuary Cove</h3>
+                        <p class="event-excerpt">The first FALKA 1050 hits the water, with sea-trials across the Broadwater and up to the Seaway.</p>
+                    </div>
+                </article>
+
+                <article class="event-card reveal reveal-d3">
+                    <div class="event-media"><img src="falka-images/lifestyle-sundeck.jpeg" alt="FALKA sundeck"></div>
+                    <div class="event-body">
+                        <p class="event-date">March 2026 &middot; Journal</p>
+                        <h3 class="event-title">Why we made the wet bar standard</h3>
+                        <p class="event-excerpt">A note on why the FALKA 1050 wet bar is where it is &mdash; and why we refused to move it.</p>
+                    </div>
+                </article>
+
+                <article class="event-card reveal reveal-d4">
+                    <div class="event-media"><img src="falka-images/interior-helm.jpeg" alt="FALKA helm"></div>
+                    <div class="event-body">
+                        <p class="event-date">May 2026 &middot; Event</p>
+                        <h3 class="event-title">Private viewings &mdash; Gold Coast</h3>
+                        <p class="event-excerpt">Two days of by-appointment inspections and short sea-trials for registered enquirers.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter" id="enquire">
+        <div class="container newsletter-inner">
+            <div>
+                <p class="eyebrow reveal">Stay in Touch</p>
+                <h3 class="reveal reveal-d2">Slow updates. <em>No noise.</em></h3>
+                <p class="reveal reveal-d2">A few notes a year on new launches, in-water events, and the occasional build story.</p>
+            </div>
+            <form class="newsletter-form reveal reveal-d3" onsubmit="return subscribe(event)">
+                <input type="email" name="email" placeholder="your@email.com" required>
+                <button type="submit">Subscribe &rarr;</button>
             </form>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer>
-        <div class="container footer-inner">
-            <img src="falka-images/logo.png" alt="FALKA Marine" class="footer-logo">
-            <div class="footer-meta">
-                <span>&copy; <span id="year"></span> Falka Yachtworks Pty Ltd</span>
-                <a href="#range">The Range</a>
-                <a href="#enquire">Enquire</a>
-                <a href="mailto:hello@falka.com.au">hello@falka.com.au</a>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="falka-images/logo.png" alt="FALKA">
+                    <p>Falka Yachtworks Pty Ltd &mdash; Australian designed, owner-operated power catamarans. Built for families and friends, sun-up to sun-down.</p>
+                </div>
+                <div class="footer-col">
+                    <h5>Range</h5>
+                    <ul>
+                        <li><a href="falka-627.html">FALKA 627</a></li>
+                        <li><a href="falka-845.html">FALKA 845</a></li>
+                        <li><a href="falka-1050.html">FALKA 1050</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Yard</h5>
+                    <ul>
+                        <li><a href="#craft">Craft</a></li>
+                        <li><a href="#service">Service</a></li>
+                        <li><a href="#journal">Journal</a></li>
+                        <li><a href="#enquire">Enquire</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>Contact</h5>
+                    <ul>
+                        <li><a href="mailto:hello@falka.com.au">hello@falka.com.au</a></li>
+                        <li>Gold Coast, Australia</li>
+                        <li><a href="#enquire">Book a viewing</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Falka Yachtworks Pty Ltd. All rights reserved.</span>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2.5" y="6" width="19" height="12" rx="3"/><path d="M10 9.5 L15 12 L10 14.5 Z" fill="currentColor" stroke="none"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10 V17 M7 7.5 V7.6 M11 17 V10 M11 13 C11 10 15 10 15 13 V17"/></svg>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
 
-    <script src="falka-cms.js"></script>
-    <script src="falka.js"></script>
+    <script>
+        // Nav scroll state
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
+
+        // Mobile nav toggle
+        const mobileNav = document.getElementById('mobileNav');
+        document.getElementById('navOpen').addEventListener('click', () => mobileNav.classList.add('open'));
+        document.getElementById('navClose').addEventListener('click', () => mobileNav.classList.remove('open'));
+        mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+
+        // Reveal on scroll
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('in');
+                    io.unobserve(e.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // Newsletter stub
+        function subscribe(e) {
+            e.preventDefault();
+            const email = e.target.email.value;
+            window.location.href = `mailto:hello@falka.com.au?subject=Subscribe&body=Please%20add%20${encodeURIComponent(email)}%20to%20the%20FALKA%20list.`;
+            return false;
+        }
+    </script>
 </body>
 </html>

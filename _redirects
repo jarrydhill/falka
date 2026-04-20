@@ -1,34 +1,38 @@
 # Cloudflare Pages URL rewrites / redirects
 #
-# Architecture: all boat pages live under /boats/<slug>. The /boats/
-# prefix keeps the catchall from matching root-level assets (css/js/
-# images) as it did when we tried /:slug on the root.
+# Range renamed 2026-04-20 to metre-based model names:
+#   FALKA 01  → FALKA 845  (static at /falka-845.html)
+#   FALKA 02  → FALKA 1050 (static at /falka-1050.html)
+#   NEW      → FALKA 627  (static at /falka-627.html)
 #
-# Rules evaluate top-to-bottom; first match wins. Static files
-# (favicon.ico, falka.css, /falka-images/*, etc.) are served first.
+# The static product pages are now the canonical URLs. The /boats/:slug
+# Sanity-backed catchall is kept for any boats added via CMS later but
+# is not used by the main range.
 
 # --- Legacy 301s: pre-rename slugs and old un-prefixed URLs ---
-# Keep this list growing only for slugs that existed in the wild —
-# there's no automatic way to enumerate them. New boats added in
-# Sanity get a /boats/<slug> URL from day one and don't need any
-# legacy entry.
+/falka-01               /falka-845.html         301
+/falka-02               /falka-1050.html        301
+/falka-03               /falka-1050.html        301
+/vika-8                 /falka-845.html         301
+/vika-81                /falka-1050.html        301
+/falka-02-open          /falka-1050.html        301
 
-/falka-01        /boats/vika-8           301
-/falka-03        /boats/vika-81          301
-/vika-8          /boats/vika-8           301
-/falka-02        /boats/falka-02         301
-/falka-02-open   /boats/falka-02-open    301
-/vika-81         /boats/vika-81          301
+/boats/vika-8           /falka-845.html         301
+/boats/falka-02         /falka-1050.html        301
+/boats/vika-81          /falka-1050.html        301
+/boats/falka-02-open    /falka-1050.html        301
+/boats/falka-01         /falka-845.html         301
+
+# --- New canonical URLs also reachable via /boats/<slug> ---
+/boats/falka-627        /falka-627.html         301
+/boats/falka-845        /falka-845.html         301
+/boats/falka-1050       /falka-1050.html        301
 
 # --- Extension-less HTML files ---
-# The files are served directly at /login and /boat (with
-# Content-Type from _headers). These 301s catch old bookmarks.
-/login.html      /login                  301
-/boat.html       /boat                   301
+/login.html             /login                  301
+/boat.html              /boat                   301
 
-# --- All boat pages ---
-# Catchall under /boats/ is safe: root-level asset paths like
-# /falka-cms.js and /falka.css don't match because they're not
-# under /boats/. Slug is extracted from the URL by falka-cms.js
-# to fetch the right boat from Sanity.
-/boats/:slug     /boat                   200
+# --- Sanity-backed catchall for any other boat slugs ---
+# Resolves to the dynamic /boat template which loads the right boat
+# from Sanity by URL slug via falka-cms.js.
+/boats/:slug            /boat                   200
