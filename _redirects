@@ -1,19 +1,19 @@
 # Cloudflare Pages URL rewrites / redirects
 #
-# Rules are evaluated in order; first match wins.
-# Static files are checked first — these rules only apply when no
-# file matches.
+# Rules evaluated top-to-bottom; first match wins. Static files are
+# checked before these rules (so /favicon.ico, /falka.css etc. are
+# served as normal).
 
-# --- Legacy 301s for slugs that were renamed in Sanity ---
+# --- Legacy 301 redirects for slugs renamed in Sanity ---
 /falka-01        /vika-8           301
 /falka-03        /vika-81          301
 
-# --- Current boat slugs → /boat template (rewrite, URL preserved) ---
-# The target is `/boat` (no .html) so Cloudflare's automatic HTML
-# canonicalisation doesn't kick in and redirect to /boat.
-# Add one line per live boat. When a new boat is added in Sanity,
-# append its slug here.
-/vika-8          /boat             200
-/falka-02        /boat             200
-/falka-02-open   /boat             200
-/vika-81         /boat             200
+# --- Known non-boat pages. Must come BEFORE the catchall so they
+# don't get swallowed and served as the boat template. ---
+/login           /login.html       200
+
+# --- Catch-all: any other single-segment path serves the boat
+# template. Slug is extracted from the URL by falka-cms.js to
+# fetch the right boat from Sanity. No .html on the target so
+# Cloudflare's automatic HTML canonicalisation doesn't trigger. ---
+/:slug           /boat             200
