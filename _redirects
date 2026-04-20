@@ -15,6 +15,12 @@
 /login.html      /login            301
 /boat.html       /boat             301
 
+# Self-rewrites to short-circuit the catchall for known paths —
+# Cloudflare's static-file check isn't kicking in reliably for
+# extension-less files, so we tell it explicitly here.
+/login           /login            200
+/boat            /boat             200
+
 # --- Catch-all: any other single-segment path serves the boat
 # template. Slug is extracted from the URL by falka-cms.js to
 # fetch the right boat from Sanity. No .html on the target so
