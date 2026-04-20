@@ -1,28 +1,27 @@
 # Cloudflare Pages URL rewrites / redirects
 #
-# Rules evaluated top-to-bottom; first match wins. Static files are
-# checked before these rules (so /favicon.ico, /falka.css etc. are
-# served as normal).
+# Rules evaluated top-to-bottom; first match wins. The `:slug`
+# placeholder matches any single path segment INCLUDING segments
+# with dots, so a catchall rule /:slug will greedily swallow
+# /falka.css, /falka-cms.js, etc. — DO NOT use a catchall here.
+# List each live boat explicitly instead.
 
 # --- Legacy 301 redirects for slugs renamed in Sanity ---
 /falka-01        /vika-8           301
 /falka-03        /vika-81          301
 
-# --- Known non-boat pages. Must come BEFORE the catchall so they
-# don't get swallowed and served as the boat template. They're
-# extension-less files (+ _headers sets Content-Type) to avoid
-# Cloudflare's HTML canonicalisation triggering a redirect loop. ---
+# --- Extension-less HTML files. Cloudflare's automatic HTML
+# canonicalisation strips .html; these files have no extension so
+# the canonicalisation can't trigger a redirect loop. _headers
+# sets Content-Type: text/html for them. ---
 /login.html      /login            301
 /boat.html       /boat             301
 
-# Self-rewrites to short-circuit the catchall for known paths —
-# Cloudflare's static-file check isn't kicking in reliably for
-# extension-less files, so we tell it explicitly here.
-/login           /login            200
-/boat            /boat             200
-
-# --- Catch-all: any other single-segment path serves the boat
-# template. Slug is extracted from the URL by falka-cms.js to
-# fetch the right boat from Sanity. No .html on the target so
-# Cloudflare's automatic HTML canonicalisation doesn't trigger. ---
-/:slug           /boat             200
+# --- Live boat slugs → /boat template (rewrite, URL preserved) ---
+# Each new live boat in Sanity needs a line added here. TODO: replace
+# with a Cloudflare Pages Function that queries Sanity dynamically
+# so this list maintains itself.
+/vika-8          /boat             200
+/falka-02        /boat             200
+/falka-02-open   /boat             200
+/vika-81         /boat             200
