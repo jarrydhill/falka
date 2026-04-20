@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="falka-auth.js"></script>
+    <script src="/falka-auth.js"></script>
     <title>FALKA — Power Catamaran</title>
     <meta name="description" content="FALKA power catamaran \u2014 Australian designed, owner-operated, all-day.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="falka.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" href="/falka.css">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <meta property="og:title" content="FALKA — Power Catamaran">
     <meta property="og:description" content="An all-day boat, not just a day boat. Australian designed.">
     <meta property="og:image" content="https://falka.com.au/falka-images/hero-navy-hull.jpeg">
@@ -19,13 +19,13 @@
 
     <!-- NAV -->
     <nav class="nav scrolled" id="nav">
-        <a href="index.html"><img src="falka-images/logo.png" alt="FALKA Marine" class="nav-logo"></a>
+        <a href="/"><img src="/falka-images/logo.png" alt="FALKA Marine" class="nav-logo"></a>
         <ul class="nav-links" id="navLinks">
-            <li><a href="index.html#philosophy">Philosophy</a></li>
-            <li><a href="index.html#range">The Range</a></li>
+            <li><a href="/#philosophy">Philosophy</a></li>
+            <li><a href="/#range">The Range</a></li>
             <li><a href="#configurator">Configure</a></li>
-            <li><a href="index.html#craft">Craft</a></li>
-            <li><a href="index.html#enquire" class="nav-cta">Contact</a></li>
+            <li><a href="/#craft">Craft</a></li>
+            <li><a href="/#enquire" class="nav-cta">Contact</a></li>
         </ul>
         <div class="nav-toggle" id="navToggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
     </nav>
@@ -33,7 +33,7 @@
     <!-- FALKA 02 DETAIL -->
     <section class="model-detail" id="falka02">
         <div class="model-hero">
-            <img src="falka-images/falka02-hero.jpeg" alt="FALKA 02">
+            <img src="/falka-images/falka02-hero.jpeg" alt="FALKA 02">
             <div class="model-hero-label">
                 <p class="label">The 9.58-Metre All-Day Cat</p>
                 <p class="num">FALKA 02</p>
@@ -81,7 +81,7 @@
             <!-- Signature: Internal Ladder -->
             <div class="overnighter-feature reveal" style="margin-top: 5rem;">
                 <div class="overnighter-image">
-                    <img src="falka-images/falka02-ladder.jpeg" alt="FALKA 02 internal stainless ladder to sun deck">
+                    <img src="/falka-images/falka02-ladder.jpeg" alt="FALKA 02 internal stainless ladder to sun deck">
                 </div>
                 <div class="overnighter-body">
                     <p class="eyebrow light">Signature &middot; Internal Ladder</p>
@@ -135,7 +135,7 @@
             <!-- Overnighter Cabin Feature -->
             <div class="overnighter-feature reveal" style="margin-top: 5rem;">
                 <div class="overnighter-image">
-                    <img src="falka-images/falka02-cabin.jpeg" alt="FALKA 02 Overnighter cabin">
+                    <img src="/falka-images/falka02-cabin.jpeg" alt="FALKA 02 Overnighter cabin">
                 </div>
                 <div class="overnighter-body">
                     <p class="eyebrow light">Overnighter Pack</p>
@@ -145,9 +145,9 @@
             </div>
 
             <div class="model-gallery reveal reveal-d3" style="margin-top: 5rem;">
-                <div><img src="falka-images/falka02-aerial.jpeg" alt="FALKA 02 aerial view"></div>
-                <div><img src="falka-images/falka02-saloon.jpeg" alt="FALKA 02 saloon"></div>
-                <div><img src="falka-images/falka02-wetbar.jpeg" alt="FALKA 02 wet bar at sunset"></div>
+                <div><img src="/falka-images/falka02-aerial.jpeg" alt="FALKA 02 aerial view"></div>
+                <div><img src="/falka-images/falka02-saloon.jpeg" alt="FALKA 02 saloon"></div>
+                <div><img src="/falka-images/falka02-wetbar.jpeg" alt="FALKA 02 wet bar at sunset"></div>
             </div>
         </div>
     </section>
@@ -174,8 +174,8 @@
             <h2 class="display reveal">BUILD ONE, <span class="accent">OR JUST TALK.</span></h2>
             <div class="model-cta-actions reveal reveal-d2">
                 <a href="#configurator" class="btn btn-dark">Configure <span class="arrow"></span></a>
-                <a href="index.html#enquire" class="btn btn-ghost">Get in Touch</a>
-                <a href="index.html#range" class="btn btn-ghost">See the Range</a>
+                <a href="/#enquire" class="btn btn-ghost">Get in Touch</a>
+                <a href="/#range" class="btn btn-ghost">See the Range</a>
             </div>
         </div>
     </section>
@@ -183,18 +183,18 @@
     <!-- FOOTER -->
     <footer>
         <div class="container footer-inner">
-            <img src="falka-images/logo.png" alt="FALKA Marine" class="footer-logo">
+            <img src="/falka-images/logo.png" alt="FALKA Marine" class="footer-logo">
             <div class="footer-meta">
                 <span>&copy; <span id="year"></span> Falka Yachtworks Pty Ltd</span>
-                <a href="index.html">Home</a>
-                <a href="index.html#range">The Range</a>
-                <a href="index.html#enquire">Enquire</a>
+                <a href="/">Home</a>
+                <a href="/#range">The Range</a>
+                <a href="/#enquire">Enquire</a>
                 <a href="mailto:hello@falka.com.au">hello@falka.com.au</a>
             </div>
         </div>
     </footer>
 
-    <script src="falka-cms.js"></script>
-    <script src="falka.js"></script>
+    <script src="/falka-cms.js"></script>
+    <script src="/falka.js"></script>
 </body>
 </html>
