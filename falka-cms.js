@@ -204,7 +204,7 @@ function renderPillarCard(p, i) {
 
 function renderRangeCard(b, i) {
   const statusLabel = b.status === 'live' ? 'Available' : 'In Development'
-  const href = b.status === 'live' ? `/${b.slug}` : '#'
+  const href = b.status === 'live' ? `/boats/${b.slug}` : '#'
   const tag = b.status === 'live' ? 'a' : 'div'
   const cls =
     b.status === 'live' ? `range-card available reveal reveal-d${Math.min(i + 2, 4)}` : `range-card coming reveal reveal-d${Math.min(i + 2, 4)}`
@@ -496,30 +496,28 @@ function renderConfigurator(boat) {
 // Page detection + bootstrap
 // ============================================================
 function detectSlug() {
-  // Primary path: clean URL like /vika-8 or /vika-8.html (via _redirects rewrite)
+  // Primary: /boats/<slug> (via _redirects rewrite)
   const path = location.pathname
-  const m = path.match(/^\/([a-z0-9][a-z0-9-]*?)(\.html)?$/i)
-  if (m && m[1] && m[1] !== 'index' && m[1] !== 'boat') return m[1]
+  const m = path.match(/^\/boats\/([a-z0-9][a-z0-9-]*)\/?$/i)
+  if (m && m[1]) return m[1]
 
-  // Fallback: /boat.html?slug=foo (direct access to template)
+  // Fallback for local dev / direct template access: ?slug=foo
   const qs = new URLSearchParams(location.search)
   if (qs.get('slug')) return qs.get('slug')
 
-  // Fallback: /boat.html with no slug — try to derive from <link rel="canonical"> if set
   return null
 }
 
 async function bootstrap() {
   const path = location.pathname
-  const isHome = path === '/' || /\/index(\.html)?$/.test(path)
-  const isBoatPage = /\/boat\.html$/.test(path) || detectSlug() !== null
+  const isHome = path === '/' || /^\/index(\.html)?$/.test(path)
+  const slug = detectSlug()
 
   try {
     if (isHome) {
       await renderHome()
-    } else if (isBoatPage) {
-      const slug = detectSlug()
-      if (slug) await renderBoat(slug)
+    } else if (slug) {
+      await renderBoat(slug)
     }
   } catch (err) {
     console.error('[FALKA CMS] render failed:', err)

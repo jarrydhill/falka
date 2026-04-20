@@ -1,27 +1,34 @@
 # Cloudflare Pages URL rewrites / redirects
 #
-# Rules evaluated top-to-bottom; first match wins. The `:slug`
-# placeholder matches any single path segment INCLUDING segments
-# with dots, so a catchall rule /:slug will greedily swallow
-# /falka.css, /falka-cms.js, etc. — DO NOT use a catchall here.
-# List each live boat explicitly instead.
+# Architecture: all boat pages live under /boats/<slug>. The /boats/
+# prefix keeps the catchall from matching root-level assets (css/js/
+# images) as it did when we tried /:slug on the root.
+#
+# Rules evaluate top-to-bottom; first match wins. Static files
+# (favicon.ico, falka.css, /falka-images/*, etc.) are served first.
 
-# --- Legacy 301 redirects for slugs renamed in Sanity ---
-/falka-01        /vika-8           301
-/falka-03        /vika-81          301
+# --- Legacy 301s: pre-rename slugs and old un-prefixed URLs ---
+# Keep this list growing only for slugs that existed in the wild —
+# there's no automatic way to enumerate them. New boats added in
+# Sanity get a /boats/<slug> URL from day one and don't need any
+# legacy entry.
 
-# --- Extension-less HTML files. Cloudflare's automatic HTML
-# canonicalisation strips .html; these files have no extension so
-# the canonicalisation can't trigger a redirect loop. _headers
-# sets Content-Type: text/html for them. ---
-/login.html      /login            301
-/boat.html       /boat             301
+/falka-01        /boats/vika-8           301
+/falka-03        /boats/vika-81          301
+/vika-8          /boats/vika-8           301
+/falka-02        /boats/falka-02         301
+/falka-02-open   /boats/falka-02-open    301
+/vika-81         /boats/vika-81          301
 
-# --- Live boat slugs → /boat template (rewrite, URL preserved) ---
-# Each new live boat in Sanity needs a line added here. TODO: replace
-# with a Cloudflare Pages Function that queries Sanity dynamically
-# so this list maintains itself.
-/vika-8          /boat             200
-/falka-02        /boat             200
-/falka-02-open   /boat             200
-/vika-81         /boat             200
+# --- Extension-less HTML files ---
+# The files are served directly at /login and /boat (with
+# Content-Type from _headers). These 301s catch old bookmarks.
+/login.html      /login                  301
+/boat.html       /boat                   301
+
+# --- All boat pages ---
+# Catchall under /boats/ is safe: root-level asset paths like
+# /falka-cms.js and /falka.css don't match because they're not
+# under /boats/. Slug is extracted from the URL by falka-cms.js
+# to fetch the right boat from Sanity.
+/boats/:slug     /boat                   200
