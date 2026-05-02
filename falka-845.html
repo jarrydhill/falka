@@ -24,7 +24,23 @@
     <!-- NAV -->
     <nav class="nav scrolled" id="nav">
         <div class="nav-left">
-            <a href="/#range" class="nav-link">The Range</a>
+            <div class="nav-dropdown">
+                <a href="/#range" class="nav-link">The Range</a>
+                <div class="nav-menu" role="menu">
+                    <span class="nav-menu-item disabled" role="menuitem" aria-disabled="true">
+                        <span class="name">FALKA 627</span>
+                        <span class="meta">In Development</span>
+                    </span>
+                    <a href="falka-845.html" class="nav-menu-item" role="menuitem">
+                        <span class="name">FALKA 845</span>
+                        <span class="meta">In the Water</span>
+                    </a>
+                    <span class="nav-menu-item disabled" role="menuitem" aria-disabled="true">
+                        <span class="name">FALKA 1050</span>
+                        <span class="meta">Coming Soon</span>
+                    </span>
+                </div>
+            </div>
             <a href="/#craft" class="nav-link">Craft</a>
             <a href="/#service" class="nav-link">Service</a>
             <a href="/#journal" class="nav-link">Journal</a>
@@ -48,7 +64,14 @@
             <button class="mobile-nav-close" id="navClose" aria-label="Close menu">&times;</button>
         </div>
         <ul>
-            <li><a href="/#range">The Range</a></li>
+            <li>
+                <span class="submenu-label">The Range</span>
+                <ul class="submenu">
+                    <li class="disabled"><span><span class="name">FALKA 627</span><span class="meta">In Dev</span></span></li>
+                    <li><a href="falka-845.html"><span class="name">FALKA 845</span><span class="meta">In the Water</span></a></li>
+                    <li class="disabled"><span><span class="name">FALKA 1050</span><span class="meta">Coming Soon</span></span></li>
+                </ul>
+            </li>
             <li><a href="#overview">FALKA 845 Overview</a></li>
             <li><a href="#specs">Specification</a></li>
             <li><a href="#enquire">Enquire</a></li>
