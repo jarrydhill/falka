@@ -4,21 +4,29 @@
    ========================================================= */
 
 :root {
+    /* Brand palette (Michi Higginbotham mark-up, 2026-05-11) */
     --ink: #0e1214;
     --ink-soft: #2a2f33;
     --ink-muted: #6b7278;
     --paper: #ffffff;
-    --paper-warm: #f6f4ef;
-    --paper-stone: #ececea;
+    --paper-warm: #efe7d4;          /* champagne */
+    --paper-stone: #e2dccb;
+    --midnight: #1f3028;            /* midnight green — dominant dark surface */
+    --midnight-deep: #161f1a;
+    --midnight-navy: #1a2b40;       /* alt hull colourway */
+    --tan: #a87b4f;                 /* teak/leather warm */
     --line: rgba(14, 18, 20, 0.12);
     --line-soft: rgba(14, 18, 20, 0.06);
-    --gold: #b08a4a;
+    --line-on-dark: rgba(255, 255, 255, 0.14);
+    --gold: #b08a4a;                /* Singer-dial gold accent */
     --gold-soft: #d9bd85;
+    --chrome: #d5d8db;              /* polished metal hint */
     --overlay: rgba(14, 18, 20, 0.42);
     --overlay-deep: rgba(14, 18, 20, 0.68);
 
     --serif: "Cormorant Garamond", "Playfair Display", "Times New Roman", serif;
     --sans:  "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --brand: "Jost", "Avenir Next", "Avenir", "Helvetica Neue", system-ui, sans-serif;
     --mono:  "Archivo", "Inter", sans-serif;
 
     --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -103,9 +111,53 @@ em.serif { font-style: italic; font-family: var(--serif); font-weight: 400; }
     justify-self: center;
     display: inline-flex;
     align-items: center;
+    color: #fff;
+    transition: color 0.4s var(--ease);
 }
-.nav-brand img { height: 34px; transition: filter 0.4s var(--ease); }
-.nav:not(.scrolled) .nav-brand img { filter: brightness(0) invert(1); }
+.nav.scrolled .nav-brand { color: var(--ink); }
+
+/* Typographic wordmark — Avenir Light direction, set in Jost on web */
+.brand-mark {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    line-height: 1;
+    user-select: none;
+}
+.brand-name {
+    font-family: var(--brand);
+    font-weight: 200;
+    font-size: 1.5rem;
+    letter-spacing: 0.42em;
+    text-indent: 0.42em;
+    text-transform: uppercase;
+    color: currentColor;
+}
+.brand-rule {
+    display: block;
+    width: 64%;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.5;
+    margin: 1px 0 2px;
+}
+.brand-sub {
+    font-family: var(--brand);
+    font-weight: 300;
+    font-size: 0.52rem;
+    letter-spacing: 0.42em;
+    text-indent: 0.42em;
+    text-transform: uppercase;
+    opacity: 0.78;
+}
+
+/* Compact wordmark for product page sub-nav etc. */
+.brand-mark.small .brand-name { font-size: 1.15rem; }
+.brand-mark.small .brand-sub { font-size: 0.46rem; }
+
+/* Subtle in-text uses */
+.brand-name.inline { font-size: inherit; letter-spacing: 0.32em; text-indent: 0.32em; font-weight: 300; }
 
 .nav-link {
     font-size: 0.78rem;
@@ -641,7 +693,7 @@ em.serif { font-style: italic; font-family: var(--serif); font-weight: 400; }
 
 /* ---------- SERVICE ---------- */
 .service {
-    background: var(--ink);
+    background: var(--midnight);
     color: #fff;
     padding: clamp(5rem, 9vw, 8rem) 0;
 }
@@ -742,7 +794,7 @@ em.serif { font-style: italic; font-family: var(--serif); font-weight: 400; }
 
 /* ---------- FOOTER ---------- */
 .site-footer {
-    background: var(--ink);
+    background: var(--midnight-deep);
     color: rgba(255,255,255,0.7);
     padding: clamp(4rem, 7vw, 6rem) 0 2rem;
     font-size: 0.92rem;
@@ -755,6 +807,7 @@ em.serif { font-style: italic; font-family: var(--serif); font-weight: 400; }
     border-bottom: 1px solid rgba(255,255,255,0.12);
 }
 .footer-brand img { height: 28px; filter: brightness(0) invert(1); margin-bottom: 1.25rem; }
+.footer-brand .brand-mark { align-items: flex-start; margin-bottom: 1.5rem; color: #fff; }
 .footer-brand p { max-width: 30ch; line-height: 1.7; }
 .footer-col h5 {
     font-size: 0.7rem; letter-spacing: 0.28em; text-transform: uppercase;
@@ -777,6 +830,85 @@ em.serif { font-style: italic; font-family: var(--serif); font-weight: 400; }
 .footer-social a { display: inline-flex; width: 32px; height: 32px; align-items: center; justify-content: center; border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; transition: all 0.25s var(--ease); }
 .footer-social a:hover { background: var(--gold); border-color: var(--gold); color: #fff; }
 .footer-social svg { width: 14px; height: 14px; }
+
+/* ---------- COLOURWAYS ---------- */
+.colourways {
+    background: var(--paper-warm);
+    padding: clamp(5rem, 9vw, 8rem) 0;
+}
+.colourways-head {
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto clamp(3rem, 5vw, 4rem);
+}
+.colourways-head h2 {
+    font-weight: 300;
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    margin: 1rem 0;
+}
+.colourways-head h2 em { color: var(--gold); }
+.colourways-head p { color: var(--ink-soft); }
+
+.colourways-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.25rem, 2.5vw, 2rem);
+}
+.colourway {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.75rem;
+    color: #fff;
+    transition: transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
+}
+.colourway:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -28px rgba(14,18,20,0.4); }
+.colourway::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(0,0,0,0.55) 100%);
+    pointer-events: none;
+}
+.colourway.champagne {
+    background: linear-gradient(155deg, #efe7d4 0%, #d6c8a5 75%, #b89968 100%);
+    color: var(--ink);
+}
+.colourway.champagne::after { background: linear-gradient(180deg, rgba(0,0,0,0) 50%, rgba(0,0,0,0.18) 100%); }
+.colourway.midnight-navy { background: linear-gradient(155deg, #2a4666 0%, #1a2b40 60%, #0b1524 100%); }
+.colourway.midnight-green { background: linear-gradient(155deg, #2f4a3d 0%, #1f3028 60%, #11201a 100%); }
+
+.colourway-body { position: relative; z-index: 2; }
+.colourway-name {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+    line-height: 1.1;
+    margin-bottom: 0.4rem;
+}
+.colourway-trim {
+    font-family: var(--brand);
+    font-size: 0.66rem;
+    font-weight: 300;
+    letter-spacing: 0.32em;
+    text-indent: 0.32em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
+.colourway-fl8 {
+    position: absolute;
+    top: 1.75rem;
+    right: 1.75rem;
+    z-index: 2;
+    font-family: var(--brand);
+    font-weight: 300;
+    font-size: 0.95rem;
+    letter-spacing: 0.42em;
+    text-indent: 0.42em;
+    text-transform: uppercase;
+    opacity: 0.85;
+}
 
 /* ---------- REVEAL ANIMATIONS ---------- */
 .reveal {
@@ -927,7 +1059,7 @@ em.serif { font-style: italic; font-family: var(--serif); font-weight: 400; }
     letter-spacing: 0.22em;
     text-transform: uppercase;
     padding: 0.7rem 1.2rem;
-    background: var(--ink);
+    background: var(--midnight);
     color: #fff;
     transition: background 0.25s var(--ease);
 }
@@ -1006,7 +1138,7 @@ em.serif { font-style: italic; font-family: var(--serif); font-weight: 400; }
     padding: clamp(5rem, 9vw, 8rem) 0;
     background: var(--paper);
 }
-.signature.dark { background: var(--ink); color: #fff; }
+.signature.dark { background: var(--midnight); color: #fff; }
 .signature-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1198,7 +1330,7 @@ em.serif { font-style: italic; font-family: var(--serif); font-weight: 400; }
 
 /* ---------- PRODUCT CTA ---------- */
 .product-cta {
-    background: var(--ink);
+    background: var(--midnight);
     color: #fff;
     padding: clamp(5rem, 9vw, 8rem) 0;
     text-align: center;
@@ -1270,7 +1402,7 @@ em.serif { font-style: italic; font-family: var(--serif); font-weight: 400; }
     position: fixed;
     inset: 0;
     z-index: 200;
-    background: var(--ink);
+    background: var(--midnight);
     color: #fff;
     transform: translateY(-100%);
     transition: transform 0.5s var(--ease);
@@ -1281,6 +1413,7 @@ em.serif { font-style: italic; font-family: var(--serif); font-weight: 400; }
 .mobile-nav.open { transform: none; }
 .mobile-nav-head { display: flex; justify-content: space-between; align-items: center; }
 .mobile-nav-head img { height: 30px; filter: brightness(0) invert(1); }
+.mobile-nav-head .brand-mark { color: #fff; }
 .mobile-nav-close {
     width: 36px; height: 36px;
     display: flex; align-items: center; justify-content: center;

@@ -1,15 +1,21 @@
 # Cloudflare Pages URL rewrites / redirects
 #
-# 2026-04-20: Range refocused to FALKA 845 only on the public site.
-# FALKA 627 and FALKA 1050 are soft-retired (still in Sanity, hidden).
-# All references to them on the site (including /boats/<slug> catchall
-# matches) redirect home.
+# 2026-05-11: Brand rename per Michi Higginbotham mark-up.
+#   FALKA 845 → FALKA 8 (marketing) / FL8 (hull badge)
+# 627 and 1050 stay soft-retired (Sanity status=draft); their URLs
+# redirect home.
 
-# --- Legacy 301s: pre-rename slugs and old un-prefixed URLs ---
-/falka-01               /falka-845.html         301
-/vika-8                 /falka-845.html         301
-/boats/vika-8           /falka-845.html         301
-/boats/falka-01         /falka-845.html         301
+# --- New canonical: FALKA 8 ---
+/falka-845              /falka-8.html           301
+/falka-845.html         /falka-8.html           301
+/boats/falka-845        /falka-8.html           301
+/boats/falka-8          /falka-8.html           301
+
+# --- Pre-2026-05-11 legacy slugs ---
+/falka-01               /falka-8.html           301
+/vika-8                 /falka-8.html           301
+/boats/vika-8           /falka-8.html           301
+/boats/falka-01         /falka-8.html           301
 
 # --- Retired models redirect to home ---
 /falka-02               /                       301
@@ -28,5 +34,5 @@
 /login.html             /login                  301
 /boat.html              /boat                   301
 
-# --- Sanity-backed catchall (only used if a future boat is added live) ---
+# --- Sanity-backed catchall ---
 /boats/:slug            /boat                   200
