@@ -88,7 +88,7 @@ em.serif { font-style: italic; font-family: var(--serif); font-weight: 400; }
     top: 0; left: 0; right: 0;
     z-index: 100;
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: auto 1fr auto;
     align-items: center;
     padding: 1rem var(--pad-x);
     background: transparent;
@@ -106,9 +106,10 @@ em.serif { font-style: italic; font-family: var(--serif); font-weight: 400; }
     align-items: center;
     gap: 2rem;
 }
+.nav-left { justify-content: center; }
 .nav-right { justify-content: flex-end; }
 .nav-brand {
-    justify-self: center;
+    justify-self: flex-start;
     display: inline-flex;
     align-items: center;
     color: #fff;
