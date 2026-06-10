@@ -16,9 +16,15 @@
     var PASSWORD_HASH = '5c0959d9d2f6ceb12012d471f098a28fadc63745d1b12a3987dc2e4284fa915e';
     var KEY = 'falka_unlocked';
 
-    // Allow ?unlock=<password> in URL for sharing a direct link
+    // Allow ?unlock=<password> in URL for sharing a direct link,
+    // and ?lock to force the gate back (demo / testing).
     try {
         var params = new URLSearchParams(location.search);
+        if (params.has('lock')) {
+            try { localStorage.removeItem(KEY); } catch (err) { /* ignore */ }
+            params.delete('lock');
+            history.replaceState({}, '', location.pathname + (params.toString() ? '?' + params.toString() : '') + location.hash);
+        }
         var qp = params.get('unlock');
         if (qp) {
             sha256(qp).then(function (h) {
