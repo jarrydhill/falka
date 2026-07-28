@@ -84,6 +84,9 @@
   --font-display: 'Cormorant Garamond', 'Hoefler Text', Georgia, serif;
   --font-sans:    'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono:    'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace;
+  /* The wordmark face (Michi Higginbotham brand refresh). Jost stands in for
+     Avenir Light until the Adobe Fonts licence is in place. */
+  --font-brand:   'Jost', 'Avenir Next', 'Avenir', 'Helvetica Neue', system-ui, sans-serif;
 
   --tracking-display: -0.015em;
   --tracking-label:    0.18em;
@@ -151,25 +154,36 @@ h1, h2, h3 {
 .fk-eyebrow--accent { color: var(--teak-700); }
 
 /* ---- Logo wordmark ---------------------------------------- */
-.fk-logo { display: inline-flex; align-items: center; gap: 10px; line-height: 1; user-select: none; }
-.fk-logo__mono {
-  display: flex; align-items: center; justify-content: center;
-  width: 36px; height: 36px;
-  border: 1px solid var(--brass-500);
-  font-family: var(--font-display); font-size: 22px;
+/* The typographic wordmark: thin tracked caps over a hairline rule.
+   Colour comes from `color` on .fk-logo so the rule can use currentColor. */
+.fk-logo {
+  display: inline-flex; flex-direction: column; align-items: center;
+  gap: 4px; line-height: 1; user-select: none;
+  font-family: var(--font-brand);
   color: var(--harbour-900);
-  padding-bottom: 0.08em;
 }
-.fk-logo__stack { display: flex; flex-direction: column; gap: 2px; }
-.fk-logo__name { font-family: var(--font-sans); font-weight: 600; font-size: 19px; letter-spacing: 0.26em; color: var(--harbour-900); }
-.fk-logo__sub  { font-family: var(--font-sans); font-weight: 500; font-size: 7px; letter-spacing: 0.34em; color: var(--text-tertiary); }
-.fk-logo--md { gap: 14px; }
-.fk-logo--md .fk-logo__mono { width: 54px; height: 54px; font-size: 34px; }
-.fk-logo--md .fk-logo__name { font-size: 30px; letter-spacing: 0.30em; }
-.fk-logo--md .fk-logo__sub  { font-size: 10.5px; letter-spacing: 0.42em; }
-.fk-logo--inverse .fk-logo__mono { border-color: var(--brass-400); color: var(--sand-50); }
-.fk-logo--inverse .fk-logo__name { color: var(--sand-50); }
-.fk-logo--inverse .fk-logo__sub  { color: var(--harbour-300); }
+.fk-logo__name {
+  font-weight: 200; font-size: 1.5rem;
+  letter-spacing: 0.42em; text-indent: 0.42em;
+  text-transform: uppercase;
+  color: currentColor;
+}
+.fk-logo__rule {
+  display: block; width: 64%; height: 1px;
+  background: currentColor; opacity: 0.5;
+  margin: 1px 0 2px;
+}
+.fk-logo__sub {
+  font-weight: 300; font-size: 0.52rem;
+  letter-spacing: 0.42em; text-indent: 0.42em;
+  text-transform: uppercase; opacity: 0.78;
+  color: currentColor;
+}
+.fk-logo--md .fk-logo__name { font-size: 2.1rem; }
+.fk-logo--md .fk-logo__sub  { font-size: 0.68rem; }
+.fk-logo--inverse { color: var(--sand-50); }
+/* Footer mark ranges left with the column, as it did pre-v3 */
+.ft .fk-logo { align-items: flex-start; }
 
 /* ---- Buttons ----------------------------------------------- */
 .fk-btn {
