@@ -56,3 +56,6 @@ desktop.ini
 !.env.example
 *.key
 *.pem
+
+# Local Netlify folder
+.netlify
