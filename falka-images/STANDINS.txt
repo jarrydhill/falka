@@ -1,1 +1,5 @@
-STAND-IN IMAGES ONLY. Replace with approved renders from FALKA Yachtworks OneDrive > FL10/Renders_Photoreal (36) and the FL8 equivalent (26). Filenames are the contract the HTML references.
+STAND-IN IMAGES: falka-26/ only.
+
+falka-36/ is now the approved FL10 set (OneDrive > FL10/Renders_Photoreal > New Cabin - Graphite, Milano interiors; hero = Colourways/Full frame/3 Graphite).
+
+falka-26/*.jpg are still lifestyle stand-ins of another boat. Replace each with the approved FL8 render under the same filename (hero, profile, bow, rear-quarter, helm, deck, detail-1), regenerate the name-{2400,1600,1000,600}.{jpg,webp,avif} variants beside them, then delete this file.
