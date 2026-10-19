@@ -4,154 +4,165 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FALKA Yachtworks — Australian Power Catamarans</title>
-    <meta name="description" content="FALKA Yachtworks builds considered power catamarans on the Gold Coast. Built to order, sea-trialled by the builder, owned for a lifetime.">
+    <meta name="description" content="FALKA Yachtworks builds considered power catamarans on the Gold Coast. The FALKA 26 and FALKA 36 — built to order, sea-trialled by the builder, owned for a lifetime.">
+    <meta name="theme-color" content="#0E222C">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Jost:wght@200;300&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="falka-v3.css">
+    <link rel="stylesheet" href="falka-v4.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
+    <script>document.documentElement.classList.add('js');</script>
     <script src="/falka-gate.js"></script>
 
     <meta property="og:title" content="FALKA Yachtworks — Australian Power Catamarans">
     <meta property="og:description" content="Considered power catamarans, built to order on the Gold Coast.">
-    <meta property="og:image" content="https://falka.com.au/falka-images/running-serenity.jpeg">
+    <meta property="og:image" content="https://falka.com.au/falka-images/falka-36/hero.jpg">
     <meta property="og:url" content="https://falka.com.au/">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FALKA Yachtworks">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 
-    <!-- HEADER -->
+    <a class="skip" href="#main">Skip to content</a>
+
+    <!-- HEADER (identical on every page) -->
     <header class="hd" id="hd">
-        <div class="wrap hd__inner">
-            <a href="#top" class="fk-logo" aria-label="FALKA Yachtworks — home">
+        <div class="wrap wrap--wide hd__inner">
+            <a href="/" class="fk-logo" aria-label="FALKA Yachtworks — home">
                 <span class="fk-logo__name">FALKA</span>
                 <span class="fk-logo__rule" aria-hidden="true"></span>
                 <span class="fk-logo__sub">Yachtworks</span>
             </a>
-            <nav class="hd__nav">
-                <div class="hd__dropdown">
-                    <a href="#range" class="hd__link">The Range</a>
-                    <div class="hd__menu" role="menu">
-                        <span class="hd__menu-item disabled" role="menuitem" aria-disabled="true">
-                            <span class="name">FALKA 627</span>
-                            <span class="meta">In development</span>
-                        </span>
-                        <a href="falka-8.html" class="hd__menu-item" role="menuitem">
-                            <span class="name">FALKA 8</span>
-                            <span class="meta">In the water</span>
-                        </a>
-                        <span class="hd__menu-item disabled" role="menuitem" aria-disabled="true">
-                            <span class="name">FALKA 1050</span>
-                            <span class="meta">Coming soon</span>
-                        </span>
-                    </div>
-                </div>
-                <a href="#craft" class="hd__link">Craft</a>
-                <a href="#ownership" class="hd__link">Ownership</a>
-                <a href="#journal" class="hd__link">Journal</a>
+            <nav class="hd__nav" aria-label="Primary">
+                <a href="falka-26.html" class="hd__link">FALKA 26</a>
+                <a href="falka-36.html" class="hd__link">FALKA 36</a>
+                <a href="/#yard" class="hd__link">The Yard</a>
+                <a href="#contact" class="hd__link">Contact</a>
             </nav>
             <div class="hd__right">
-                <a href="#enquiry" class="fk-btn fk-btn--secondary fk-btn--sm hd__cta">Arrange a viewing</a>
-                <button class="hd__burger" id="navOpen" aria-label="Open menu">
+                <a href="#enquiry" class="fk-btn fk-btn--sm hd__cta">Enquire</a>
+                <button class="hd__burger" id="navOpen" type="button" aria-label="Open menu" aria-controls="mobileNav" aria-expanded="false">
                     <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- MOBILE NAV -->
-    <div class="mnav" id="mobileNav">
+    <!-- MOBILE NAV (identical on every page) -->
+    <div class="mnav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menu">
         <div class="mnav__head">
             <span class="fk-logo fk-logo--inverse" aria-label="FALKA Yachtworks">
                 <span class="fk-logo__name">FALKA</span>
                 <span class="fk-logo__rule" aria-hidden="true"></span>
                 <span class="fk-logo__sub">Yachtworks</span>
             </span>
-            <button class="mnav__close" id="navClose" aria-label="Close menu">&times;</button>
+            <button class="mnav__close" id="navClose" type="button" aria-label="Close menu"></button>
         </div>
-        <ul>
-            <li><span class="dim">FALKA 627 <span class="meta">In development</span></span></li>
-            <li><a href="falka-8.html">FALKA 8 <span class="meta">In the water</span></a></li>
-            <li><span class="dim">FALKA 1050 <span class="meta">Coming soon</span></span></li>
-            <li><a href="#craft">Craft</a></li>
-            <li><a href="#ownership">Ownership</a></li>
-            <li><a href="#journal">Journal</a></li>
-            <li><a href="#enquiry">Arrange a viewing</a></li>
+        <ul class="mnav__list">
+            <li><a href="falka-26.html">FALKA 26 <span class="idx">FL26</span></a></li>
+            <li><a href="falka-36.html">FALKA 36 <span class="idx">FL36</span></a></li>
+            <li><a href="/#yard">The Yard</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#enquiry">Enquire</a></li>
         </ul>
         <div class="mnav__foot">
             Falka Yachtworks Pty Ltd &middot; Gold Coast, Australia<br>
-            hello@falka.com.au
+            <a href="mailto:hello@falka.com.au">hello@falka.com.au</a>
         </div>
     </div>
 
-    <span id="top"></span>
+    <main id="main">
 
     <!-- HERO -->
-    <section class="hero">
-        <div class="hero__media">
-            <img src="falka-images/running-serenity.jpeg" alt="FALKA 8 underway">
+    <section class="hero" aria-label="Introduction">
+        <div class="hero__media hero__media--kb">
+            <img src="falka-images/falka-36/hero.jpg" alt="A FALKA flybridge power catamaran on calm water" fetchpriority="high">
         </div>
-        <div class="hero__overlay"></div>
-        <div class="hero__content">
-            <div class="wrap hero__inner">
-                <span class="fk-eyebrow fk-eyebrow--inverse"><span class="tick"></span>Australian power catamarans</span>
-                <h1>Considered craft,<br>built for the day.</h1>
-                <div class="hero__actions">
-                    <a href="falka-8.html" class="fk-btn fk-btn--inverse">Explore FALKA 8 <span>&rarr;</span></a>
-                    <a href="#enquiry" class="fk-btn fk-btn--ghost-inverse">Register interest</a>
-                </div>
-                <div class="hero__strip">
-                    <div class="hero__stat"><span class="k">The range</span><span class="v">3 hulls</span></div>
-                    <div class="hero__stat"><span class="k">In the water</span><span class="v">FALKA 8</span></div>
-                    <div class="hero__stat"><span class="k">Certification</span><span class="v">CE Cat B</span></div>
-                    <div class="hero__stat"><span class="k">Commissioned in</span><span class="v">Australia</span></div>
-                </div>
-            </div>
+        <div class="wrap wrap--wide hero__inner">
+            <span class="fk-eyebrow fk-eyebrow--inverse rise"><span class="tick"></span>Australian power catamarans</span>
+            <h1 class="hero__title rise d1">Considered craft, built for the day.</h1>
+            <a href="#range" class="fk-btn fk-btn--light rise d2">The range <span class="arr" aria-hidden="true">&darr;</span></a>
         </div>
+        <span class="hero__scroll" aria-hidden="true">Scroll</span>
     </section>
 
     <!-- THE RANGE -->
-    <section class="sec wrap" id="range">
-        <div class="sec__head">
-            <span class="fk-eyebrow reveal"><span class="tick"></span>The Range</span>
-            <h2 class="reveal reveal-d2">One hull in the water. Two on the board.</h2>
-            <p class="reveal reveal-d3">Every FALKA is built to order, certified CE Category B offshore, and commissioned in Australia before handover. We build slowly — never more, never faster.</p>
+    <section id="range" aria-labelledby="range-title">
+        <div class="tone-sand sec--tight">
+            <div class="wrap wrap--wide intro">
+                <div>
+                    <span class="fk-eyebrow reveal"><span class="tick"></span>The Range</span>
+                    <h2 class="reveal d1" id="range-title">Two hulls. One way of building.</h2>
+                </div>
+                <p class="reveal d2">Every FALKA is built to order and commissioned in Australia before handover. We build slowly &mdash; never more, never faster.</p>
+            </div>
         </div>
-        <div class="range range--single">
-            <a href="falka-8.html" class="model reveal reveal-d2">
-                <div class="model__media">
-                    <img src="falka-images/running-serenity.jpeg" alt="FALKA 8">
+
+        <article class="panel" aria-labelledby="p-falka-26">
+            <div class="panel__media reveal-img">
+                <img src="falka-images/falka-26/hero.jpg" alt="FALKA 26 power catamaran on open water" loading="lazy" decoding="async">
+            </div>
+            <div class="wrap wrap--wide panel__inner">
+                <div class="panel__grid">
+                    <div>
+                        <span class="panel__idx reveal">01 &middot; FL26</span>
+                        <h3 class="panel__name reveal d1" id="p-falka-26">FALKA 26</h3>
+                        <p class="panel__desc reveal d2">The original day-to-night catamaran. Eight metres, built to order, sea-trialled by the builder.</p>
+                    </div>
+                    <div class="panel__aside reveal d2">
+                    <dl class="stats stats--3">
+                        <div class="stat"><dt>Length overall</dt><dd>8.00 m</dd></div>
+                        <div class="stat"><dt>Beam</dt><dd>4.50 m</dd></div>
+                        <div class="stat"><dt>Day capacity</dt><dd>8 POB</dd></div>
+                    </dl>
+                        <a href="falka-26.html" class="textlink panel__link">Explore<span class="vh"> FALKA 26</span> <span class="arr" aria-hidden="true">&rarr;</span></a>
+                    </div>
                 </div>
-                <div class="model__badges">
-                    <span class="fk-badge fk-badge--solid">In the water</span>
-                    <span class="fk-badge fk-badge--brass">Built to order</span>
+            </div>
+        </article>
+
+        <article class="panel" aria-labelledby="p-falka-36">
+            <div class="panel__media reveal-img">
+                <img src="falka-images/falka-36/hero.jpg" alt="FALKA 36 flybridge power catamaran on open water" loading="lazy" decoding="async">
+            </div>
+            <div class="wrap wrap--wide panel__inner">
+                <div class="panel__grid">
+                    <div>
+                        <span class="panel__idx reveal">02 &middot; FL36</span>
+                        <h3 class="panel__name reveal d1" id="p-falka-36">FALKA 36</h3>
+                        <p class="panel__desc reveal d2">The larger three-cabin flybridge sister ship. Room to stay out for the weekend.</p>
+                    </div>
+                    <div class="panel__aside reveal d2">
+                    <dl class="stats stats--3">
+                        <div class="stat"><dt>Length overall</dt><dd>TBC</dd></div>
+                        <div class="stat"><dt>Beam</dt><dd>TBC</dd></div>
+                        <div class="stat"><dt>Cabins</dt><dd>3</dd></div>
+                    </dl>
+                        <a href="falka-36.html" class="textlink panel__link">Explore<span class="vh"> FALKA 36</span> <span class="arr" aria-hidden="true">&rarr;</span></a>
+                    </div>
                 </div>
-                <h3 class="model__name">FALKA 8</h3>
-                <div class="model__row">
-                    <span class="model__loa">LOA 8.00 m</span>
-                    <span class="model__cta">Explore &rarr;</span>
-                </div>
-            </a>
-        </div>
+            </div>
+        </article>
     </section>
 
-    <!-- CRAFT -->
-    <section class="sec wrap" id="craft">
-        <div class="split">
-            <div class="split__media reveal">
-                <img src="falka-images/craft-portrait.jpeg" alt="FALKA joinery">
+    <!-- THE YARD -->
+    <section class="sec tone-sand" id="yard" aria-labelledby="yard-title">
+        <div class="wrap wrap--wide split">
+            <div class="split__media reveal-img">
+                <img src="falka-images/craft-portrait.jpeg" alt="Hand-finished joinery in the FALKA yard" loading="lazy" decoding="async">
             </div>
             <div class="split__body">
                 <span class="fk-eyebrow reveal"><span class="tick"></span>The Yard</span>
-                <h2 class="reveal reveal-d2">A quieter way to build.</h2>
-                <p class="split__quote reveal reveal-d2">&ldquo;The spec sheet matches the boat. The person answering the phone knows your build.&rdquo;</p>
-                <p class="reveal reveal-d3">FALKA isn't a high-volume production yard. Hulls are laid up by a yard we've partnered with for years, commissioned here, and handed over by the same small team that spec'd them.</p>
-                <p class="reveal reveal-d3">We make fewer, and we make them properly. It's the only way we're interested in doing it.</p>
-                <div class="split__sign reveal reveal-d4">
+                <h2 class="reveal d1" id="yard-title">A quieter way to build.</h2>
+                <p class="split__quote reveal d1">&ldquo;The spec sheet matches the boat. The person answering the phone knows your build.&rdquo;</p>
+                <p class="reveal d2">FALKA isn't a high-volume production yard. Hulls are laid up by a yard we've partnered with for years, commissioned here, and handed over by the same small team that spec'd them.</p>
+                <p class="reveal d2">We make fewer, and we make them properly. It's the only way we're interested in doing it.</p>
+                <div class="split__sign reveal d3">
                     <div class="who">Jarryd Hill</div>
                     <div class="role">Director, Falka Yachtworks</div>
                 </div>
@@ -159,132 +170,41 @@
         </div>
     </section>
 
-    <!-- COLOURWAYS -->
-    <section class="colourways sec" id="colourways">
-        <div class="wrap">
-            <div class="sec__head">
-                <span class="fk-eyebrow reveal"><span class="tick"></span>Colourways</span>
-                <h2 class="reveal reveal-d2">Three hulls. One silhouette.</h2>
-                <p class="reveal reveal-d3">Each FALKA 8 is finished to one of three hull colourways with polished trim and teak detailing. Specified at order.</p>
-            </div>
-            <div class="cw-grid">
-                <div class="cw reveal reveal-d2">
-                    <div class="cw__field cw__field--champagne"><span class="cap">FL8 &middot; Hull</span></div>
-                    <h3 class="cw__name">Champagne</h3>
-                    <div class="cw__trim">Chrome trim &middot; Teak deck</div>
-                </div>
-                <div class="cw reveal reveal-d3">
-                    <div class="cw__field cw__field--navy"><span class="cap">FL8 &middot; Hull</span></div>
-                    <h3 class="cw__name">Midnight Navy</h3>
-                    <div class="cw__trim">Chrome trim &middot; Teak deck</div>
-                </div>
-                <div class="cw reveal reveal-d4">
-                    <div class="cw__field cw__field--green"><span class="cap">FL8 &middot; Hull</span></div>
-                    <h3 class="cw__name">Midnight Green</h3>
-                    <div class="cw__trim">Chrome trim &middot; Teak deck</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- OWNERSHIP (inverse) -->
-    <section class="invpanel sec" id="ownership">
-        <div class="wrap">
-            <span class="fk-eyebrow fk-eyebrow--inverse reveal"><span class="tick"></span>Ownership</span>
-            <h2 class="reveal reveal-d2">After the handover.</h2>
-            <p class="lead reveal reveal-d3">A FALKA is a long relationship, not a transaction. Service, upgrades, resale, and the unglamorous bits in between &mdash; we're the same number you called when you enquired.</p>
-            <div class="own-grid">
-                <div class="own-item reveal reveal-d2">
-                    <h4>Commissioning</h4>
-                    <p>Every boat commissioned in Australia before handover. Sea trial, walkthrough, and pre-delivery inspection included.</p>
-                </div>
-                <div class="own-item reveal reveal-d3">
-                    <h4>Servicing</h4>
-                    <p>Scheduled service plans, engine checks, and structural audits &mdash; through our network or your preferred yard.</p>
-                </div>
-                <div class="own-item reveal reveal-d3">
-                    <h4>Upgrades</h4>
-                    <p>Audio, electronics, upholstery, shade. Retrofit what the next season needs without starting again.</p>
-                </div>
-                <div class="own-item reveal reveal-d4">
-                    <h4>Resale</h4>
-                    <p>When it's time for the next boat, we help the current owner sell the last one. Short list of buyers, straight answer.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- JOURNAL -->
-    <section class="sec wrap" id="journal">
-        <div class="sec__head">
-            <span class="fk-eyebrow reveal"><span class="tick"></span>Journal</span>
-            <h2 class="reveal reveal-d2">From the water.</h2>
-        </div>
-        <div class="journal-grid">
-            <article class="jcard reveal reveal-d2">
-                <div class="jcard__media"><img src="falka-images/running-sea-eclipse.jpeg" alt="FALKA 8 underway"></div>
-                <div class="jcard__body">
-                    <span class="jcard__date">April 2026 &middot; Launch</span>
-                    <h3 class="jcard__title">FALKA 8 in the water</h3>
-                    <p>First hull commissioned, sea-trialled across the Broadwater and up to the Seaway.</p>
-                </div>
-            </article>
-            <article class="jcard reveal reveal-d3">
-                <div class="jcard__media"><img src="falka-images/lifestyle-sundeck.jpeg" alt="FALKA sundeck"></div>
-                <div class="jcard__body">
-                    <span class="jcard__date">March 2026 &middot; Journal</span>
-                    <h3 class="jcard__title">Why we built it</h3>
-                    <p>A note on the brief that started FALKA &mdash; and why no production boat fit it.</p>
-                </div>
-            </article>
-            <article class="jcard reveal reveal-d4">
-                <div class="jcard__media"><img src="falka-images/interior-helm.jpeg" alt="FALKA helm"></div>
-                <div class="jcard__body">
-                    <span class="jcard__date">May 2026 &middot; Event</span>
-                    <h3 class="jcard__title">Private viewings, Gold Coast</h3>
-                    <p>Two days of by-appointment inspections and short sea-trials for registered enquirers.</p>
-                </div>
-            </article>
-        </div>
-    </section>
-
     <!-- ENQUIRY -->
-    <section class="sec wrap" id="enquiry">
-        <div class="enquiry__grid">
-            <div class="sec__head" style="margin-bottom: 0;">
-                <span class="fk-eyebrow reveal"><span class="tick"></span>Commission</span>
-                <h2 class="reveal reveal-d2">Register your interest.</h2>
-                <p class="reveal reveal-d3">Tell us a little about your intended boating. A member of the yard will be in touch to arrange a private viewing on the Gold Coast.</p>
+    <section class="sec tone-navy-2" id="enquiry" aria-labelledby="enquiry-title">
+        <div class="wrap wrap--wide enquiry__grid">
+            <div class="enquiry__head">
+                <span class="fk-eyebrow fk-eyebrow--inverse reveal"><span class="tick"></span>Commission</span>
+                <h2 class="reveal d1" id="enquiry-title">Register your interest.</h2>
+                <p class="reveal d2">Tell us a little about your intended boating. A member of the yard will be in touch to arrange a private viewing on the Gold Coast.</p>
             </div>
-            <form id="enquiryForm" class="reveal reveal-d3">
-                <div class="form-row">
+            <form id="enquiryForm" class="form reveal d2">
+                <div class="form__row">
                     <div class="fk-field">
                         <label for="fqName">Name</label>
-                        <input id="fqName" name="name" type="text" placeholder="Your name" required>
+                        <input id="fqName" name="name" type="text" placeholder="Your name" autocomplete="name" required>
                     </div>
                     <div class="fk-field">
                         <label for="fqEmail">Email</label>
-                        <input id="fqEmail" name="email" type="email" placeholder="you@example.com" required>
+                        <input id="fqEmail" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
                     </div>
                 </div>
-                <div class="form-stack">
-                    <div class="fk-field">
-                        <label for="fqMsg">Tell us about your boating</label>
-                        <textarea id="fqMsg" name="message" rows="3" placeholder="Coastal weekends, the occasional offshore run&hellip;"></textarea>
-                    </div>
-                    <div>
-                        <button type="submit" class="fk-btn fk-btn--primary fk-btn--lg">Register interest</button>
-                    </div>
+                <div class="fk-field">
+                    <label for="fqMsg">Tell us about your boating</label>
+                    <textarea id="fqMsg" name="message" rows="3" placeholder="Coastal weekends, the occasional offshore run&hellip;"></textarea>
                 </div>
+                <button type="submit" class="fk-btn fk-btn--light">Register interest <span class="arr" aria-hidden="true">&rarr;</span></button>
             </form>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="ft">
-        <div class="wrap">
+    </main>
+
+    <!-- FOOTER (identical on every page) -->
+    <footer class="ft" id="contact">
+        <div class="wrap wrap--wide">
             <div class="ft__grid">
-                <div>
+                <div class="ft__brand">
                     <span class="fk-logo fk-logo--md fk-logo--inverse" aria-label="FALKA Yachtworks">
                         <span class="fk-logo__name">FALKA</span>
                         <span class="fk-logo__rule" aria-hidden="true"></span>
@@ -293,21 +213,25 @@
                     <p class="ft__blurb">Boutique builders of considered power catamarans. Gold Coast, Australia.</p>
                 </div>
                 <div class="ft__col">
-                    <h4>The Range</h4>
-                    <span class="dim">FALKA 627</span>
-                    <a href="falka-8.html">FALKA 8</a>
-                    <span class="dim">FALKA 1050</span>
+                    <h3>The Range</h3>
+                    <ul>
+                        <li><a href="falka-26.html">FALKA 26</a></li>
+                        <li><a href="falka-36.html">FALKA 36</a></li>
+                    </ul>
                 </div>
                 <div class="ft__col">
-                    <h4>The Yard</h4>
-                    <a href="#craft">Craft</a>
-                    <a href="#ownership">Ownership</a>
-                    <a href="#journal">Journal</a>
+                    <h3>The Yard</h3>
+                    <ul>
+                        <li><a href="/#yard">How we build</a></li>
+                        <li><span>Gold Coast, Queensland</span></li>
+                    </ul>
                 </div>
                 <div class="ft__col">
-                    <h4>Contact</h4>
-                    <a href="mailto:hello@falka.com.au">hello@falka.com.au</a>
-                    <a href="#enquiry">Arrange a viewing</a>
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><a href="mailto:hello@falka.com.au">hello@falka.com.au</a></li>
+                        <li><a href="#enquiry">Arrange a viewing</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="ft__base">
@@ -320,26 +244,55 @@
     <script>
         // Header hairline on scroll
         const hd = document.getElementById('hd');
-        window.addEventListener('scroll', () => {
-            hd.classList.toggle('hd--scrolled', window.scrollY > 24);
-        }, { passive: true });
+        const setHd = () => hd.classList.toggle('hd--scrolled', window.scrollY > 24);
+        window.addEventListener('scroll', setHd, { passive: true });
+        setHd();
+
+        // Mark the current page in the primary nav
+        const here = location.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+        hd.querySelectorAll('.hd__link').forEach(a => {
+            const p = new URL(a.href).pathname.replace(/\.html$/, '');
+            if (p === here && !a.hash) a.setAttribute('aria-current', 'page');
+        });
 
         // Mobile nav
         const mobileNav = document.getElementById('mobileNav');
-        document.getElementById('navOpen').addEventListener('click', () => mobileNav.classList.add('open'));
-        document.getElementById('navClose').addEventListener('click', () => mobileNav.classList.remove('open'));
-        mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileNav.classList.remove('open')));
+        const navOpen = document.getElementById('navOpen');
+        const navClose = document.getElementById('navClose');
+        const setNav = (open) => {
+            mobileNav.classList.toggle('open', open);
+            document.body.classList.toggle('is-locked', open);
+            navOpen.setAttribute('aria-expanded', String(open));
+            if (open) navClose.focus(); else navOpen.focus({ preventScroll: true });
+        };
+        navOpen.addEventListener('click', () => setNav(true));
+        navClose.addEventListener('click', () => setNav(false));
+        mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            mobileNav.classList.remove('open');
+            document.body.classList.remove('is-locked');
+            navOpen.setAttribute('aria-expanded', 'false');
+        }));
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && mobileNav.classList.contains('open')) setNav(false);
+        });
 
         // Reveal on scroll — slow, unhurried
-        const io = new IntersectionObserver(entries => {
-            entries.forEach(e => {
-                if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-            });
-        }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+        const reveals = document.querySelectorAll('.reveal, .reveal-img');
+        const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (still || !('IntersectionObserver' in window)) {
+            reveals.forEach(el => el.classList.add('in'));
+        } else {
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+                });
+            }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+            reveals.forEach(el => io.observe(el));
+        }
 
-        // Enquiry → mailto compose
-        document.getElementById('enquiryForm').addEventListener('submit', (e) => {
+        // Enquiry → mailto compose (home page form only)
+        const enquiryForm = document.getElementById('enquiryForm');
+        if (enquiryForm) enquiryForm.addEventListener('submit', (e) => {
             e.preventDefault();
             const f = e.target;
             const body = encodeURIComponent(
