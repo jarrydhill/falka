@@ -1,11 +1,7 @@
-# Tell Cloudflare to serve /boat as HTML even though it has no .html extension.
-# The file is extension-less so Cloudflare's automatic .html stripping doesn't
-# mangle rewrite targets like /vika-8 → /boat.
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
 
-/boat
-  Content-Type: text/html; charset=utf-8
-  Cache-Control: public, max-age=3600
-
-/login
-  Content-Type: text/html; charset=utf-8
-  Cache-Control: public, max-age=3600
+/falka-images/*
+  Cache-Control: public, max-age=31536000, immutable

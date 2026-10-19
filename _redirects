@@ -1,23 +1,30 @@
 # Cloudflare Pages URL rewrites / redirects
 #
-# 2026-05-11: Brand rename per Michi Higginbotham mark-up.
-#   FALKA 845 → FALKA 8 (marketing) / FL8 (hull badge)
-# 627 and 1050 stay soft-retired (Sanity status=draft); their URLs
-# redirect home.
+# 2026-10: site rebuilt as static HTML, CMS removed.
+#   FALKA 8 / FL8 → FALKA 26 (8.00 m)
+#   FL10 / C37   → FALKA 36
 
-# --- New canonical: FALKA 8 ---
-/falka-845              /falka-8.html           301
-/falka-845.html         /falka-8.html           301
-/boats/falka-845        /falka-8.html           301
-/boats/falka-8          /falka-8.html           301
+# --- Canonical model pages ---
+/falka-26               /falka-26.html          301
+/falka-36               /falka-36.html          301
+
+# --- FALKA 8 era (2026-05 → 2026-10) ---
+/falka-8                /falka-26.html          301
+/falka-8.html           /falka-26.html          301
+/boats/falka-8          /falka-26.html          301
+
+# --- FALKA 845 era ---
+/falka-845              /falka-26.html          301
+/falka-845.html         /falka-26.html          301
+/boats/falka-845        /falka-26.html          301
 
 # --- Pre-2026-05-11 legacy slugs ---
-/falka-01               /falka-8.html           301
-/vika-8                 /falka-8.html           301
-/boats/vika-8           /falka-8.html           301
-/boats/falka-01         /falka-8.html           301
+/falka-01               /falka-26.html          301
+/vika-8                 /falka-26.html          301
+/boats/vika-8           /falka-26.html          301
+/boats/falka-01         /falka-26.html          301
 
-# --- Retired models redirect to home ---
+# --- Retired models and CMS-era routes redirect home ---
 /falka-02               /                       301
 /falka-03               /                       301
 /falka-627              /                       301
@@ -29,10 +36,8 @@
 /boats/falka-02-open    /                       301
 /boats/falka-627        /                       301
 /boats/falka-1050       /                       301
-
-# --- Extension-less HTML files ---
-/login.html             /login                  301
-/boat.html              /boat                   301
-
-# --- Sanity-backed catchall ---
-/boats/:slug            /boat                   200
+/boats/*                /                       301
+/boat                   /                       301
+/boat.html              /                       301
+/login                  /                       301
+/login.html             /                       301

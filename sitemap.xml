@@ -5,7 +5,11 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://falka.com.au/falka-8.html</loc>
+    <loc>https://falka.com.au/falka-26.html</loc>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://falka.com.au/falka-36.html</loc>
     <priority>0.9</priority>
   </url>
 </urlset>
